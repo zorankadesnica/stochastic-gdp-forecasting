@@ -40,3 +40,29 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Generated results
+*.csv
+
+# Optional: ignore LaTeX source too
+# *.tex
