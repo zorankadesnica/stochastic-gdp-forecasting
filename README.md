@@ -16,51 +16,6 @@ The main empirical result is that stochastic lasso performs on par with strong l
 
 ---
 
-## Key Results
-
-| Model | RMSE | R² | Direction Accuracy |
-|-------|------|----|--------------------|
-| Lasso | 0.0329 | 0.718 | 94.9% |
-| **Stochastic Lasso** | **0.0330** | **0.718** | **94.9%** |
-| Ensemble Stochastic | 0.0332 | 0.713 | 94.9% |
-| Ridge | 0.0335 | 0.708 | 94.9% |
-| OLS | 0.0336 | 0.707 | 94.9% |
-| Random Walk | 0.1034 | -1.779 | 49.2% |
-
-**Main finding:** Stochastic Lasso achieves statistical parity with standard Lasso while providing a natural framework for handling measurement uncertainty.
-
----
-
-## Mathematical Idea
-
-Observed predictors are modeled as noisy measurements:
-
-```text
-x̃_t = x_t + ξ_t
-````
-
-The stochastic optimization problem is:
-
-```text
-w* = argmin_{w ∈ W} E_ξ [ (1/T) Σ ℓ(y_t, (x_t + ξ_t)ᵀw) ]
-```
-
-For quadratic loss, the expected objective becomes:
-
-```text
-f(w) = (1/T) Σ (y_t - x_tᵀw)² + wᵀΣ_ξ w
-```
-
-This means the stochastic formulation adds a ridge-type regularization term driven by the noise covariance matrix.
-
-Under standard regularity conditions, the Sample Average Approximation estimator is consistent:
-
-```text
-ŵ_N → w*   almost surely as N → ∞
-```
-
----
-
 ## Repository Structure
 
 ```text
