@@ -1,4 +1,4 @@
-````md
+
 # Stochastic Optimization for Robust Economic Forecasting
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
@@ -79,7 +79,7 @@ Final dataset: **99 quarterly observations** from **2002Q3 to 2025Q3**.
 ### Installation
 
 ```bash
-git clone https://github.com/username/stochastic-gdp-forecasting.git
+git clone https://github.com/zorankadesnica/stochastic-gdp-forecasting.git
 cd stochastic-gdp-forecasting
 ```
 
@@ -168,5 +168,3 @@ The main conclusion is:
 
 MIT License. See `LICENSE`.
 
-```
-```
