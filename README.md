@@ -1,4 +1,4 @@
-````md
+
 # Stochastic Optimization for Robust Economic Forecasting
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
@@ -13,51 +13,6 @@ Stochastic optimization methods for GDP nowcasting and composite economic index 
 This repository studies forecasting when predictor variables are noisy. Instead of treating economic data as perfectly observed, the project models measurement error directly and uses stochastic optimization to estimate forecasting models.
 
 The main empirical result is that stochastic lasso performs on par with strong linear benchmarks such as Lasso, Ridge, and OLS, while clearly outperforming a naive random-walk baseline.
-
----
-
-## Key Results
-
-| Model | RMSE | R² | Direction Accuracy |
-|-------|------|----|--------------------|
-| Lasso | 0.0329 | 0.718 | 94.9% |
-| **Stochastic Lasso** | **0.0330** | **0.718** | **94.9%** |
-| Ensemble Stochastic | 0.0332 | 0.713 | 94.9% |
-| Ridge | 0.0335 | 0.708 | 94.9% |
-| OLS | 0.0336 | 0.707 | 94.9% |
-| Random Walk | 0.1034 | -1.779 | 49.2% |
-
-**Main finding:** Stochastic Lasso achieves statistical parity with standard Lasso while providing a natural framework for handling measurement uncertainty.
-
----
-
-## Mathematical Idea
-
-Observed predictors are modeled as noisy measurements:
-
-```text
-x̃_t = x_t + ξ_t
-````
-
-The stochastic optimization problem is:
-
-```text
-w* = argmin_{w ∈ W} E_ξ [ (1/T) Σ ℓ(y_t, (x_t + ξ_t)ᵀw) ]
-```
-
-For quadratic loss, the expected objective becomes:
-
-```text
-f(w) = (1/T) Σ (y_t - x_tᵀw)² + wᵀΣ_ξ w
-```
-
-This means the stochastic formulation adds a ridge-type regularization term driven by the noise covariance matrix.
-
-Under standard regularity conditions, the Sample Average Approximation estimator is consistent:
-
-```text
-ŵ_N → w*   almost surely as N → ∞
-```
 
 ---
 
@@ -124,7 +79,7 @@ Final dataset: **99 quarterly observations** from **2002Q3 to 2025Q3**.
 ### Installation
 
 ```bash
-git clone https://github.com/username/stochastic-gdp-forecasting.git
+git clone https://github.com/zorankadesnica/stochastic-gdp-forecasting.git
 cd stochastic-gdp-forecasting
 ```
 
@@ -213,5 +168,3 @@ The main conclusion is:
 
 MIT License. See `LICENSE`.
 
-```
-```
